@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for store project.
 
@@ -25,6 +27,8 @@ SECRET_KEY = "django-insecure-xn*e_9jkz^yesgzrqg$x^r1^!fv@b^93b4o+mn2u%#^imty_wp
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+DOMAIN_NAME = 'http://localhost:8000'
 
 # Application definition
 
@@ -63,6 +67,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'products.context_processors.baskets'
             ],
         },
     },
@@ -131,3 +136,10 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Sending Emails
+EMAIL_HOST = 'smtp.yandex.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'test-st0re-server@yandex.ru'
+EMAIL_HOST_PASSWORD = os.getenv('store-server-password')
+EMAIL_USE_SSL = True
