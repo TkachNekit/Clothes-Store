@@ -80,8 +80,12 @@ WSGI_APPLICATION = "store.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("STORE_DB_NAME"),
+        "USER": os.getenv("STORE_DB_USER"),
+        "PASSWORD": os.getenv("postgres_user_password"),
+        "HOST": os.getenv("STORE_DB_HOST"),
+        "PORT": os.getenv("DB_PORT"),
     }
 }
 
