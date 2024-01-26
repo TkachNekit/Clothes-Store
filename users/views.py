@@ -9,7 +9,6 @@ from common.views import TitleMixin
 from users.forms import UserLoginForm, UserProfileForm, UserRegistrationForm
 from users.models import EmailVerification, User
 
-# Create your views here.
 
 class UserLoginView(TitleMixin, LoginView):
     template_name = 'users/login.html'
