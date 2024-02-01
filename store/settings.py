@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-DOMAIN_NAME = 'http://localhost:8000'
+DOMAIN_NAME = 'http://127.0.0.1:8000'
 
 # Application definition
 
@@ -190,3 +190,9 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
+
+# stripe
+
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_WEBHOOK_SECRET = 'whsec_44b9bfa350f8e8a7fc6f731ac04014bf215e97871b8f94e4e2e0f16e75ba3ace'
